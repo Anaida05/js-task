@@ -1,0 +1,72 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+}
+.form-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.input-container input {
+  border-radius: 6px;
+  padding: 10px 20px;
+  border: 1px solid #e6e8ec;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.table_container {
+  width: 70%;
+  border-collapse: collapse;
+  margin: auto;
+}
+.table_container th,
+td {
+  padding: 12px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+.table_head th {
+  background-color: #f8f8f8;
+  color: #9fa2a9;
+  font-size: 14px;
+  font-weight: 200;
+  border: none;
+}
+
+.success {
+  background-color: #f0fdf4;
+}
+.failed {
+  background-color: #fef2f2;
+}
+.pass {
+  color: #2caa81;
+  font-weight: bold;
+  background: #dcfce7;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+.fail {
+  color: #e0476b;
+  font-weight: bold;
+  margin: 10px;
+  background: #fee2e2;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.delete {
+  color: #de4a4a;
+  cursor: pointer;
+}

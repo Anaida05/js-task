@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <h1>Marksheet Generator</h1>
+    <div class="form-container">
+      <div class="input-container">
+        <input
+          id="subject-name"
+          type="text"
+          placeholder="Subject Name"
+          required
+        />
+        <input
+          id="passing-marks"
+          type="number"
+          placeholder="Passing Marks"
+          required
+        />
+      </div>
+      <button class="btn" onclick="addSubject()">Add Subject</button>
+    </div>
+    <table class="table_container">
+      <thead class="table_head">
+        <th>Subject</th>
+        <th>Passing Marks</th>
+        <th>Marks Obtained</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </thead>
+      <tbody id="tbl-body"></tbody>
+      <tfoot>
+        <tr>
+          <td>Total Subject: <span id="total-subject">0</span></td>
+          <td>Total Passing Marks: <span id="total-passing">0</span></td>
+          <td>Total Marks Obtained: <span id="total-obtained">0</span></td>
+          <td>Overall Status: <span id="total-status">0</span></td>
+        </tr>
+      </tfoot>
+    </table>
+    <script src="main.js"></script>
+  </body>
+</html>
