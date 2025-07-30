@@ -18,7 +18,6 @@ function addSubject() {
   const status = document.createElement("td");
   const status_data = document.createElement("span");
   status.append(status_data);
-  status_data.innerText = "";
 
   const table_obtained = document.createElement("td");
   const inp_obtained = document.createElement("input");
@@ -50,10 +49,16 @@ function addSubject() {
 
   document.getElementById("subject-name").value = "";
   document.getElementById("passing-marks").value = "";
+}
 
-  function updateStatus(input, passingMarks, row, status) {
+function updateStatus(input, passingMarks, row, status) {
     const value = parseInt(input.value);
-
+    if(isNaN(value)){
+      status.innerText = ""
+      status.className = ""
+      row.className=""
+      return
+    }
     if (value >= passingMarks) {
       status.innerText = "Pass";
       status.className = "pass";
@@ -67,14 +72,13 @@ function addSubject() {
 
   function footerTotal() {
     const rows = document.querySelectorAll("#tbl-body tr");
-    // console.log("foot");
     let totalSubjects = 0;
     let totalPassingMarks = 0;
     let totalObtainedMarks = 0;
     let totalStatus = true;
     rows.forEach((row) => {
       const passing = parseInt(row.children[1].innerText);
-      console.log("row", row.children);
+      // console.log("row", row.children);
       const input = row.querySelector("input");
       const obtained_total = parseInt(input?.value);
       const statusValue = row.children[3].children[0].innerText;
@@ -86,11 +90,16 @@ function addSubject() {
       }
     });
 
+    if(totalObtainedMarks === 0){
+      document.getElementById("total-status").innerText = ""
+    }else{
+      document.getElementById("total-status").innerText = totalStatus
+      ? "Pass"
+      : "Fail";
+    }
+
     document.getElementById("total-subject").innerText = totalSubjects;
     document.getElementById("total-passing").innerText = totalPassingMarks;
     document.getElementById("total-obtained").innerText = totalObtainedMarks;
-    document.getElementById("total-status").innerText = totalStatus
-      ? "Pass"
-      : "Fail";
+    
   }
-}
