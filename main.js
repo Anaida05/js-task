@@ -78,7 +78,6 @@ function updateStatus(input, passingMarks, row, status) {
     let totalStatus = true;
     rows.forEach((row) => {
       const passing = parseInt(row.children[1].innerText);
-      // console.log("row", row.children);
       const input = row.querySelector("input");
       const obtained_total = parseInt(input?.value);
       const statusValue = row.children[3].children[0].innerText;
